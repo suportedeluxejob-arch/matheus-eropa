@@ -12,13 +12,13 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-    const [language, setLanguageState] = useState<Locale>("pt")
+    const [language, setLanguageState] = useState<Locale>("es")
     const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
         // 1. Check Local Storage
         const savedLang = localStorage.getItem("wgpatch-language") as Locale
-        if (savedLang && ["pt", "es", "it"].includes(savedLang)) {
+        if (savedLang && ["es", "it"].includes(savedLang)) {
             setLanguageState(savedLang)
             setIsLoaded(true)
             return
@@ -31,7 +31,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         } else if (browserLang.startsWith("it")) {
             setLanguageState("it")
         } else {
-            setLanguageState("pt") // Default fallback
+            setLanguageState("es") // Default fallback
         }
         setIsLoaded(true)
     }, [])

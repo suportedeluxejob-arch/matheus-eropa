@@ -25,13 +25,6 @@ export function Navbar() {
   const LanguageSwitcher = () => (
     <div className="flex items-center gap-1 mx-2">
       <button
-        onClick={() => setLanguage('pt')}
-        className={`text-xl hover:scale-110 transition-transform ${language === 'pt' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
-        title="Português"
-      >
-        🇧🇷
-      </button>
-      <button
         onClick={() => setLanguage('es')}
         className={`text-xl hover:scale-110 transition-transform ${language === 'es' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
         title="Español"
