@@ -24,7 +24,7 @@ export const PRODUCTS: Product[] = [
         descriptionKey: "descriptions.eafc26_bundle_desc_short", // Need to ensure these keys exist
         priceKey: "product.price_eafc26_bundle",
         oldPriceKey: "product.price_eafc26_bundle_old",
-        image: "/eafc26-bundle-promo.png",
+        image: "https://iili.io/fS2H9WJ.md.png",
         link: "https://go.invictuspay.app.br/3p65wtvjht",
         cardLink: "https://pay.cakto.com.br/agtjpxf_638373",
         isPromo: true,
