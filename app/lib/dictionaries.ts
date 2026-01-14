@@ -75,6 +75,7 @@ export const dictionary = {
     descriptions: {
       eafc26_bundle_title: "PARCHE EAFC 26 + JUEGO EAFC 26",
       eafc26_bundle_desc: "¡Súper promoción! Juego completo EA FC 26 + parche premium con equipos brasileños. Medios digitales en su cuenta.",
+      eafc26_bundle_desc_short: "Combo completo: Juego EA FC 26 + Parche Premium Brasileño.",
       eafc26_title: "EAFC 26 - Equipos Brasileños",
       eafc26_desc: "¡El lanzamiento más nuevo! Parche completo de EA Sports FC 26 con todos los equipos brasileños licenciados.",
       eafc25_title: "EAFC 25 - Equipos Brasileños",
@@ -205,6 +206,7 @@ export const dictionary = {
     descriptions: {
       eafc26_bundle_title: "PATCH EAFC 26 + GIOCO EAFC 26",
       eafc26_bundle_desc: "Super promozione! Gioco completo EA FC 26 + patch premium con squadre brasiliane. Media digitali sul tuo account.",
+      eafc26_bundle_desc_short: "Combo completo: Gioco EA FC 26 + Patch Premium Brasiliana.",
       eafc26_title: "EAFC 26 - Squadre Brasiliane",
       eafc26_desc: "L'ultima uscita! Patch completa di EA Sports FC 26 con tutte le squadre brasiliane con licenza.",
       eafc25_title: "EAFC 25 - Squadre Brasiliane",
