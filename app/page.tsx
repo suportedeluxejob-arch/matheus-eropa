@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Download, Zap, Users, Trophy, Check, Shield, Star } from "lucide-react"
+import { Download, Zap, Users, Trophy, Check, Shield, Star, CheckCircle2 } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { PaymentMethodModal } from "@/components/payment-method-modal"
 import { CountdownTimer } from "@/components/countdown-timer"

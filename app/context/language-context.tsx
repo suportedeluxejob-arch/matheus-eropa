@@ -57,10 +57,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         return current as string
     }
 
-    if (!isLoaded) {
-        return null // or a loading spinner to prevent flash of wrong content
-    }
-
     return (
         <LanguageContext.Provider value={{ language, setLanguage, t }}>
             {children}

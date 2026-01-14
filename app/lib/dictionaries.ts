@@ -33,7 +33,8 @@ export const dictionary = {
       launch: "🚀 LANZAMIENTO",
       bundle: "PAQUETE",
       service: "SERVICIO",
-      patch: "PARCHE"
+      patch: "PARCHE",
+      view_details: "Ver Detalles"
     },
     product: {
       digital_media: "Medios Digitales",
@@ -164,7 +165,8 @@ export const dictionary = {
       launch: "🚀 LANCIO",
       bundle: "PACCHETTO",
       service: "SERVIZIO",
-      patch: "PATCH"
+      patch: "PATCH",
+      view_details: "Visualizza Dettagli"
     },
     product: {
       digital_media: "Media Digitali",
