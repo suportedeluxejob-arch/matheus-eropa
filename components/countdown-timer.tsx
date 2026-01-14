@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { Clock } from "lucide-react"
 
 interface CountdownTimerProps {
   hours?: number
@@ -8,8 +9,8 @@ interface CountdownTimerProps {
 
 export function CountdownTimer({ hours = 10 }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState({
-    hours: hours,
-    minutes: 0,
+    hours: Math.floor(hours),
+    minutes: Math.round((hours % 1) * 60),
     seconds: 0,
   })
 
@@ -39,16 +40,23 @@ export function CountdownTimer({ hours = 10 }: CountdownTimerProps) {
   const formatTime = (time: number) => time.toString().padStart(2, "0")
 
   return (
-    <div className="bg-red-600/90 text-white px-3 py-2 rounded-lg flex items-center gap-2 animate-pulse">
-      <span className="text-lg">⏰</span>
-      <div className="flex items-center gap-1 font-mono font-bold">
-        <span className="bg-black/30 px-2 py-1 rounded text-sm">{formatTime(timeLeft.hours)}</span>
-        <span>:</span>
-        <span className="bg-black/30 px-2 py-1 rounded text-sm">{formatTime(timeLeft.minutes)}</span>
-        <span>:</span>
-        <span className="bg-black/30 px-2 py-1 rounded text-sm">{formatTime(timeLeft.seconds)}</span>
+    <div className="inline-flex items-center gap-3 bg-primary/10 backdrop-blur-md border border-primary/20 text-white px-4 py-2 rounded-2xl shadow-[0_0_15px_-5px_var(--primary)] animate-pulse">
+      <Clock className="w-4 h-4 text-primary" />
+      <div className="flex items-center gap-1.5 font-mono text-base font-bold tracking-tighter">
+        <div className="flex flex-col items-center">
+          <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">{formatTime(timeLeft.hours)}</span>
+        </div>
+        <span className="text-primary/50 animate-pulse">:</span>
+        <div className="flex flex-col items-center">
+          <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">{formatTime(timeLeft.minutes)}</span>
+        </div>
+        <span className="text-primary/50 animate-pulse">:</span>
+        <div className="flex flex-col items-center">
+          <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">{formatTime(timeLeft.seconds)}</span>
+        </div>
       </div>
-      <span className="text-xs font-semibold">RESTAM</span>
+      <div className="h-4 w-px bg-white/10 mx-1" />
+      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/80">OFFER ENDS</span>
     </div>
   )
 }

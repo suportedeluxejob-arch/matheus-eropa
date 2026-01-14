@@ -594,18 +594,18 @@ export default function Home() {
             <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img src="/instalacao-remota.png" alt={t("descriptions.remote_install_title")} className="w-full h-48 object-cover" />
-                <Badge className="absolute top-3 left-3 bg-blue-600/90 text-white">{t("featured.service")}</Badge>
+                <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground font-bold shadow-lg shadow-primary/20">{t("featured.service")}</Badge>
               </div>
               <div className="p-6">
-                <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">
+                <Badge className="mb-3 bg-primary/10 text-primary border-primary/20 w-fit">
                   {t("descriptions.remote_install_title")}
                 </Badge>
-                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.remote_install_title")}</h3>
-                <p className="text-white/70 mb-4">
+                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{t("descriptions.remote_install_title")}</h3>
+                <p className="text-muted-foreground mb-6 line-clamp-3">
                   {t("descriptions.remote_install_desc")}
                 </p>
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-2xl font-bold text-cyan-400">{t("product.price_remote_install")}</div>
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="text-3xl font-black text-primary">{t("product.price_remote_install")}</div>
                 </div>
                 <Button
                   onClick={() =>
@@ -615,7 +615,7 @@ export default function Home() {
                       t("descriptions.remote_install_title"),
                     )
                   }
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 rounded-xl shadow-lg shadow-primary/20 transition-all"
                 >
                   <Download className="mr-2 h-4 w-4" />
                   {t("product.contract_service")}
@@ -623,49 +623,60 @@ export default function Home() {
               </div>
             </Card>
           </div>
-        </div >
-      </section >
+        </div>
+      </section>
 
       {/* Features Section */}
-      < section className="py-20 px-4 bg-black/20" >
+      <section className="py-24 px-4 relative overflow-hidden bg-black/40">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">{t("features.title")}</h2>
-            <p className="text-white/70 text-xl">{t("features.subtitle")}</p>
+          <div className="text-center mb-20">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 px-4 py-1.5 uppercase tracking-widest text-xs font-bold">
+              Premium Features
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">{t("features.title")}</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t("features.subtitle")}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <Zap className="h-12 w-12 text-cyan-400" />
+            <Card className="glass-card group hover:border-primary/30 transition-all duration-500">
+              <CardHeader className="p-8">
+                <div className="flex flex-col items-center text-center gap-6">
+                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500">
+                    <Zap className="h-10 w-10 text-primary" />
+                  </div>
                   <div>
-                    <CardTitle className="text-white text-xl">{t("features.remote_install_title")}</CardTitle>
-                    <CardDescription className="text-white/70">{t("features.remote_install_desc")}</CardDescription>
+                    <CardTitle className="text-white text-2xl font-bold mb-4 tracking-tight">{t("features.remote_install_title")}</CardTitle>
+                    <CardDescription className="text-muted-foreground text-lg leading-relaxed">{t("features.remote_install_desc")}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
             </Card>
 
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <Users className="h-12 w-12 text-cyan-400" />
+            <Card className="glass-card group hover:border-primary/30 transition-all duration-500">
+              <CardHeader className="p-8">
+                <div className="flex flex-col items-center text-center gap-6">
+                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500">
+                    <Users className="h-10 w-10 text-primary" />
+                  </div>
                   <div>
-                    <CardTitle className="text-white text-xl">{t("features.brazilian_teams_title")}</CardTitle>
-                    <CardDescription className="text-white/70">{t("features.brazilian_teams_desc")}</CardDescription>
+                    <CardTitle className="text-white text-2xl font-bold mb-4 tracking-tight">{t("features.brazilian_teams_title")}</CardTitle>
+                    <CardDescription className="text-muted-foreground text-lg leading-relaxed">{t("features.brazilian_teams_desc")}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
             </Card>
 
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <Trophy className="h-12 w-12 text-cyan-400" />
+            <Card className="glass-card group hover:border-primary/30 transition-all duration-500">
+              <CardHeader className="p-8">
+                <div className="flex flex-col items-center text-center gap-6">
+                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/20 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500">
+                    <Trophy className="h-10 w-10 text-primary" />
+                  </div>
                   <div>
-                    <CardTitle className="text-white text-xl">{t("features.licensed_leagues_title")}</CardTitle>
-                    <CardDescription className="text-white/70">
+                    <CardTitle className="text-white text-2xl font-bold mb-4 tracking-tight">{t("features.licensed_leagues_title")}</CardTitle>
+                    <CardDescription className="text-muted-foreground text-lg leading-relaxed">
                       {t("features.licensed_leagues_desc")}
                     </CardDescription>
                   </div>
@@ -674,7 +685,7 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Testimonials Section */}
       < TestimonialsSection />
