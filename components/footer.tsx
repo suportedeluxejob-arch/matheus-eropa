@@ -78,7 +78,7 @@ export function Footer() {
             </a>
 
             <a
-              href="https://www.tiktok.com/@wgpatch?lang=pt-BR"
+              href="https://www.tiktok.com/@wgpatch"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-white/70 hover:text-red-400 transition-colors"

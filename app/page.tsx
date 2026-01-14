@@ -214,7 +214,7 @@ export default function Home() {
                         >
                           <div className="text-center">
                             <p className="text-white font-bold text-sm md:text-lg mb-1">{t("product.secondary")}</p>
-                            <p className="text-cyan-400 font-bold text-lg md:text-2xl">R$ 29,90</p>
+                            <p className="text-cyan-400 font-bold text-lg md:text-2xl">{t("product.price_secundaria")}</p>
                             <p className="text-white/60 text-[10px] md:text-xs mt-1">{t("product.shared_account")}</p>
                           </div>
                         </button>
@@ -228,7 +228,7 @@ export default function Home() {
                         >
                           <div className="text-center">
                             <p className="text-white font-bold text-sm md:text-lg mb-1">{t("product.primary")}</p>
-                            <p className="text-purple-400 font-bold text-lg md:text-2xl">R$ 74,90</p>
+                            <p className="text-purple-400 font-bold text-lg md:text-2xl">{t("product.price_primaria")}</p>
                             <p className="text-white/60 text-[10px] md:text-xs mt-1">{t("product.exclusive_account")}</p>
                           </div>
                         </button>
@@ -237,10 +237,10 @@ export default function Home() {
 
                     <div className="flex flex-wrap items-baseline gap-2 md:gap-4 mb-4 md:mb-6">
                       <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                        {selectedLicense === "secundaria" ? "R$ 29,90" : "R$ 74,90"}
+                        {selectedLicense === "secundaria" ? t("product.price_secundaria") : t("product.price_primaria")}
                       </div>
                       <div className="text-white/50 line-through text-lg md:text-xl">
-                        {selectedLicense === "secundaria" ? "R$ 59,90" : "R$ 149,90"}
+                        {selectedLicense === "secundaria" ? t("product.price_secundaria_old") : t("product.price_primaria_old")}
                       </div>
                       <Badge className="bg-green-600 text-white text-xs md:text-sm">50% OFF</Badge>
                     </div>
@@ -303,8 +303,8 @@ export default function Home() {
                   conta.
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-2xl font-bold text-cyan-400">R$ 99,90</div>
-                  <div className="text-white/60 line-through">R$ 199,90</div>
+                  <div className="text-2xl font-bold text-cyan-400">{t("product.price_eafc26_bundle")}</div>
+                  <div className="text-white/60 line-through">{t("product.price_eafc26_bundle_old")}</div>
                 </div>
                 <Button
                   onClick={() =>
@@ -376,8 +376,8 @@ export default function Home() {
                   {t("descriptions.eafc25_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-2xl font-bold text-cyan-400">R$ 49,90</div>
-                  <div className="text-white/60 line-through">R$ 99,90</div>
+                  <div className="text-2xl font-bold text-cyan-400">{t("product.price_eafc25")}</div>
+                  <div className="text-white/60 line-through">{t("product.price_eafc25_old")}</div>
                 </div>
                 <Button
                   onClick={() =>
@@ -414,8 +414,8 @@ export default function Home() {
                   {t("descriptions.eafc25_bundle_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-2xl font-bold text-cyan-400">R$ 79,90</div>
-                  <div className="text-white/60 line-through">R$ 159,90</div>
+                  <div className="text-2xl font-bold text-cyan-400">{t("product.price_eafc25_bundle")}</div>
+                  <div className="text-white/60 line-through">{t("product.price_eafc25_bundle_old")}</div>
                 </div>
                 <Button
                   onClick={() =>
@@ -450,8 +450,8 @@ export default function Home() {
                   {t("descriptions.eafc24_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-2xl font-bold text-cyan-400">R$ 39,90</div>
-                  <div className="text-white/60 line-through">R$ 79,90</div>
+                  <div className="text-2xl font-bold text-cyan-400">{t("product.price_eafc24")}</div>
+                  <div className="text-white/60 line-through">{t("product.price_eafc24_old")}</div>
                 </div>
                 <Button
                   onClick={() =>
@@ -486,8 +486,8 @@ export default function Home() {
                   {t("descriptions.pes21_bundle_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-2xl font-bold text-cyan-400">R$ 59,90</div>
-                  <div className="text-white/60 line-through">R$ 119,90</div>
+                  <div className="text-2xl font-bold text-cyan-400">{t("product.price_pes21_bundle")}</div>
+                  <div className="text-white/60 line-through">{t("product.price_pes21_bundle_old")}</div>
                 </div>
                 <Button
                   onClick={() =>
@@ -522,8 +522,8 @@ export default function Home() {
                   {t("descriptions.pes21_patch_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-2xl font-bold text-cyan-400">R$ 34,90</div>
-                  <div className="text-white/60 line-through">R$ 69,90</div>
+                  <div className="text-2xl font-bold text-cyan-400">{t("product.price_pes21_patch")}</div>
+                  <div className="text-white/60 line-through">{t("product.price_pes21_patch_old")}</div>
                 </div>
                 <Button
                   onClick={() =>
@@ -558,8 +558,8 @@ export default function Home() {
                   {t("descriptions.dfl25_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-2xl font-bold text-cyan-400">R$ 29,90</div>
-                  <div className="text-white/60 line-through">R$ 59,90</div>
+                  <div className="text-2xl font-bold text-cyan-400">{t("product.price_dfl25")}</div>
+                  <div className="text-white/60 line-through">{t("product.price_dfl25_old")}</div>
                 </div>
                 <Button
                   onClick={() =>
@@ -592,7 +592,7 @@ export default function Home() {
                   {t("descriptions.remote_install_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-2xl font-bold text-cyan-400">R$ 19,90</div>
+                  <div className="text-2xl font-bold text-cyan-400">{t("product.price_remote_install")}</div>
                 </div>
                 <Button
                   onClick={() =>

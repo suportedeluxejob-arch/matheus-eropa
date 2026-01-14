@@ -95,6 +95,11 @@ export function Navbar() {
             </div>
           </div>
 
+          {/* Mobile Language Switcher */}
+          <div className="sm:hidden flex items-center mr-2">
+            <LanguageSwitcher />
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}

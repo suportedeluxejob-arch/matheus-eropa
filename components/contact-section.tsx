@@ -58,7 +58,7 @@ export function ContactSection() {
 
           <Button asChild size="lg" className="bg-red-500 hover:bg-red-600 text-white">
             <a
-              href="https://www.tiktok.com/@wgpatch?lang=pt-BR"
+              href="https://www.tiktok.com/@wgpatch"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3"
