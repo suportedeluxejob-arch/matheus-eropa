@@ -19,6 +19,7 @@ import { HeroCarousel } from "@/components/hero-carousel"
 
 export default function Home() {
   const { t } = useLanguage()
+  const [selectedCategory, setSelectedCategory] = useState<string>("all")
   const [paymentModal, setPaymentModal] = useState({
     isOpen: false,
     pixLink: "",
@@ -116,139 +117,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Featured Products Section with Filters */}
       <section id="products" className="py-24 px-4 relative overflow-hidden">
-        <div className="absolute top-1/4 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -z-10" />
-
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <Badge className="mb-4 bg-red-600/10 text-red-500 border-red-500/20 px-4 py-1.5 uppercase tracking-widest text-xs font-bold">
-              {t("featured.badge")}
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 px-3 py-1 uppercase tracking-widest text-[10px] font-bold">
+              Premium Patches
             </Badge>
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">{t("featured.title")}</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t("featured.subtitle")}</p>
-          </div>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tight">{t("featured.title")}</h2>
 
-          <div className="mb-16">
-            <Card className="glass-card relative border-2 border-primary/30 backdrop-blur-xl overflow-hidden hover:border-primary/50 transition-all duration-500 shadow-2xl">
-              <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />
-
-              <div className="relative flex flex-col lg:grid lg:grid-cols-2 gap-12 p-8 lg:p-12">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-white/10 bg-black group shadow-3xl">
-                  <img
-                    src="/images/egs-easportsfc26standardedition-eacanada-s2-1200x1600-effee280c00b9890a0c5249d4b0e5c97.jpg"
-                    alt={`EA Sports FC 26 - ${t("product.digital_media")}`}
-                    className="w-full h-full object-cover rounded-3xl transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-6 left-6 flex flex-col gap-2">
-                    <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col">
-                  <div>
-                    <div className="flex items-center gap-3 mb-6">
-                      <Badge className="bg-primary text-primary-foreground font-black tracking-widest uppercase text-xs px-4 py-1.5 shadow-lg shadow-primary/20">
-                        {t("featured.launch")}
-                      </Badge>
-                    </div>
-
-                    <h3 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
-                      EA Sports FC 26<br />
-                      <span className="text-primary">{t("product.digital_media")}</span>
-                    </h3>
-
-                    <p className="text-lg text-muted-foreground mb-8 leading-relaxed italic border-l-4 border-primary/30 pl-6">
-                      Jogo completo digital do EA Sports FC 26 para PS5, PS4 e Xbox. Acesso imediato na sua conta com
-                      todos os recursos oficiais e atualizações.
-                    </p>
-
-                    <div className="grid grid-cols-2 gap-4 mb-10">
-                      {[
-                        "PS5 | PS4 | Xbox",
-                        t("product.immediate_access"),
-                        t("product.official_license"),
-                        t("product.total_support")
-                      ].map((feat, i) => (
-                        <div key={i} className="flex items-center gap-3 text-white/80 font-medium">
-                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                          <span className="text-sm tracking-wide">{feat}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mt-auto">
-                    <div className="mb-8 p-6 glass-card rounded-3xl border border-primary/20">
-                      <h4 className="text-white/60 font-black uppercase tracking-[0.2em] text-[10px] mb-6 text-center">
-                        {t("product.choose_license")}
-                      </h4>
-                      <div className="grid grid-cols-2 gap-4">
-                        <button
-                          onClick={() => setSelectedLicense("secundaria")}
-                          className={`p-5 rounded-2xl border-2 transition-all duration-300 ${selectedLicense === "secundaria"
-                            ? "border-primary bg-primary/20 shadow-[0_0_20px_rgba(var(--primary),0.3)]"
-                            : "border-white/5 bg-white/5 hover:border-primary/30"
-                            }`}
-                        >
-                          <div className="text-center">
-                            <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">{t("product.secondary")}</p>
-                            <p className="text-white font-black text-xl">{t("product.price_secundaria")}</p>
-                          </div>
-                        </button>
-
-                        <button
-                          onClick={() => setSelectedLicense("primaria")}
-                          className={`p-5 rounded-2xl border-2 transition-all duration-300 ${selectedLicense === "primaria"
-                            ? "border-primary bg-primary/20 shadow-[0_0_20px_rgba(var(--primary),0.3)]"
-                            : "border-white/5 bg-white/5 hover:border-primary/30"
-                            }`}
-                        >
-                          <div className="text-center">
-                            <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">{t("product.primary")}</p>
-                            <p className="text-white font-black text-xl">{t("product.price_primaria")}</p>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-
-                    <div className="flex items-baseline gap-4 mb-8">
-                      <div className="text-5xl font-black text-primary drop-shadow-[0_0_15px_rgba(var(--primary),0.3)]">
-                        {selectedLicense === "secundaria" ? t("product.price_secundaria") : t("product.price_primaria")}
-                      </div>
-                      <div className="text-white/30 line-through text-xl font-medium">
-                        {selectedLicense === "secundaria" ? t("product.price_secundaria_old") : t("product.price_primaria_old")}
-                      </div>
-                      <Badge className="bg-emerald-500 text-white font-black px-2 py-0.5">50% OFF</Badge>
-                    </div>
-
-                    <Button
-                      onClick={() =>
-                        openPaymentModal(
-                          selectedLicense === "secundaria"
-                            ? "https://go.invictuspay.app.br/p9z3m78rwl"
-                            : "https://go.invictuspay.app.br/ywfgl87azm",
-                          "",
-                          `EA Sports FC 26 - ${t("product.digital_media")} (${selectedLicense === "secundaria" ? t("product.secondary") : t("product.primary")})`,
-                        )
-                      }
-                      className="w-full h-16 bg-primary hover:bg-primary/90 text-primary-foreground font-black text-lg rounded-2xl shadow-2xl shadow-primary/20 transition-all hover:scale-[1.01] active:scale-[0.99]"
-                    >
-                      <Download className="mr-3 h-5 w-5" />
-                      <span>{t("product.buy_now")}</span>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </Card>
+            {/* Category Filter Bar */}
+            <div className="flex flex-wrap justify-center gap-3 mb-16">
+              {["all", "brazil", "europe", "world-cup", "service"].map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 border backdrop-blur-md ${selectedCategory === cat
+                    ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_rgba(var(--primary),0.4)] scale-105"
+                    : "bg-white/5 text-white/60 border-white/10 hover:border-white/20 hover:text-white"
+                    }`}
+                >
+                  {t(`categories.${cat.replace("-", "_")}`)}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PRODUCTS.map((product) => (
+            {PRODUCTS.filter(p => selectedCategory === "all" || p.displayCategory === selectedCategory).map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}

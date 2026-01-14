@@ -25,6 +25,13 @@ export const dictionary = {
       subtitle: "Parches para todas las plataformas",
       optimized: "Parches optimizados"
     },
+    categories: {
+      all: "Todos",
+      brazil: "Brasil",
+      europe: "Europa",
+      world_cup: "World Cup 2026",
+      service: "Servicios"
+    },
     featured: {
       badge: "DESTACADO",
       title: "Productos Destacados",
@@ -71,7 +78,11 @@ export const dictionary = {
       price_pes21_patch_old: "€ 69,90",
       price_dfl25: "€ 29,90",
       price_dfl25_old: "€ 59,90",
-      price_remote_install: "€ 19,90"
+      price_remote_install: "€ 19,90",
+      price_champions_bundle: "€ 89,90",
+      price_champions_bundle_old: "€ 179,90",
+      price_wc26: "€ 44,90",
+      price_wc26_old: "€ 89,90"
     },
     descriptions: {
       eafc26_bundle_title: "PARCHE EAFC 26 + JUEGO EAFC 26",
@@ -92,7 +103,11 @@ export const dictionary = {
       dfl25_title: "DFL 25 - EQUIPOS BRASILEÑOS MÓVIL",
       dfl25_desc: "Experimenta el fútbol brasileño en tu celular con equipos actualizados.",
       remote_install_title: "INSTALACIÓN REMOTA",
-      remote_install_desc: "Servicio de instalación remota profesional para FC24, FC25 y PES 2021. Rápido, seguro y sin complicaciones."
+      remote_install_desc: "Servicio de instalación remota profesional para FC24, FC25 y PES 2021. Rápido, seguro y sin complicaciones.",
+      champions_bundle_title: "PAQUETE CHAMPIONS EDITION",
+      champions_bundle_desc: "El parche definitivo para los fans del fútbol europeo. Todas as ligas con licencias e gráficos 4K.",
+      wc26_title: "COPA DEL MUNDO 2026 - PATCH",
+      wc26_desc: "Vive la emoción del mundial por adelantado con todas las selecciones y estadios oficiales."
     },
     features: {
       title: "¿Por Qué Elegir Nuestros Parches?",
@@ -157,6 +172,13 @@ export const dictionary = {
       subtitle: "Patch per tutte le piattaforme",
       optimized: "Patch ottimizzate"
     },
+    categories: {
+      all: "Tutti",
+      brazil: "Brasile",
+      europe: "Europa",
+      world_cup: "World Cup 2026",
+      service: "Servizi"
+    },
     featured: {
       badge: "IN EVIDENZA",
       title: "Prodotti in Evidenza",
@@ -203,7 +225,11 @@ export const dictionary = {
       price_pes21_patch_old: "€ 13,90",
       price_dfl25: "€ 5,90",
       price_dfl25_old: "€ 11,90",
-      price_remote_install: "€ 3,90"
+      price_remote_install: "€ 3,90",
+      price_champions_bundle: "€ 89,90",
+      price_champions_bundle_old: "€ 179,90",
+      price_wc26: "€ 44,90",
+      price_wc26_old: "€ 89,90"
     },
     descriptions: {
       eafc26_bundle_title: "PATCH EAFC 26 + GIOCO EAFC 26",
@@ -224,7 +250,11 @@ export const dictionary = {
       dfl25_title: "DFL 25 - SQUADRE BRASILIANE CELLULARE",
       dfl25_desc: "Prova il calcio brasiliano sul tuo cellulare con squadre aggiornate.",
       remote_install_title: "INSTALLAZIONE REMOTA",
-      remote_install_desc: "Servizio di installazione remota professionale per FC24, FC25 e PES 2021. Veloce, sicuro e senza complicazioni."
+      remote_install_desc: "Servizio di installazione remota professionale per FC24, FC25 e PES 2021. Veloce, sicuro e senza complicazioni.",
+      champions_bundle_title: "PACCHETTO CHAMPIONS EDITION",
+      champions_bundle_desc: "La patch definitiva per i fan del calcio europeo. Tutti i campionati con licenza e grafica 4K.",
+      wc26_title: "COPPA DEL MONDO 2026 - PATCH",
+      wc26_desc: "Vivi l'emozione del mondiale in anticipo con tutte le nazionali e gli stadi ufficiali."
     },
     features: {
       title: "Perché Scegliere le Nostre Patch?",

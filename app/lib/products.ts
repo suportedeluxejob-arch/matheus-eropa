@@ -12,6 +12,7 @@ export interface Product {
     cardLink?: string; // Optional credit card link
     isPromo?: boolean;
     withTimer?: boolean;
+    displayCategory: "brazil" | "europe" | "world-cup" | "service";
 }
 
 export const PRODUCTS: Product[] = [
@@ -28,6 +29,7 @@ export const PRODUCTS: Product[] = [
         cardLink: "https://pay.cakto.com.br/agtjpxf_638373",
         isPromo: true,
         withTimer: true,
+        displayCategory: "brazil",
     },
     {
         id: "eafc26-standard",
@@ -42,6 +44,7 @@ export const PRODUCTS: Product[] = [
         link: "https://go.invictuspay.app.br/qaatnpzass",
         cardLink: "https://pay.cakto.com.br/5jgfx87_638363",
         isPromo: true,
+        displayCategory: "brazil",
     },
     {
         id: "eafc25-standard",
@@ -55,6 +58,7 @@ export const PRODUCTS: Product[] = [
         link: "https://go.invictuspay.app.br/fuv2ufja8l",
         cardLink: "https://pay.cakto.com.br/39xfxuj_638367",
         isPromo: true,
+        displayCategory: "brazil",
     },
     {
         id: "eafc25-bundle",
@@ -67,6 +71,7 @@ export const PRODUCTS: Product[] = [
         image: "/eafc25-bundle.png",
         link: "https://go.invictuspay.app.br/rt0t2uecxd",
         cardLink: "https://pay.cakto.com.br/39xfxuj_638367",
+        displayCategory: "brazil",
     },
     {
         id: "eafc24-standard",
@@ -80,6 +85,7 @@ export const PRODUCTS: Product[] = [
         link: "https://go.invictuspay.app.br/kllijhnfgx",
         cardLink: "https://pay.cakto.com.br/337h6fv_638368",
         isPromo: true,
+        displayCategory: "brazil",
     },
     {
         id: "pes21-bundle",
@@ -93,6 +99,7 @@ export const PRODUCTS: Product[] = [
         link: "https://go.invictuspay.app.br/ovmhlg21rh",
         cardLink: "https://pay.cakto.com.br/3634a38_638395",
         isPromo: true,
+        displayCategory: "brazil",
     },
     {
         id: "pes21-patch",
@@ -106,6 +113,7 @@ export const PRODUCTS: Product[] = [
         image: "/pes2021-patch.png",
         link: "https://go.invictuspay.app.br/qcgqeanwjc",
         cardLink: "https://pay.cakto.com.br/8fekayj_638394",
+        displayCategory: "brazil",
     },
     {
         id: "dfl25-mobile",
@@ -118,6 +126,7 @@ export const PRODUCTS: Product[] = [
         image: "/dfl25-celular.png",
         link: "https://pay.cakto.com.br/xa54qtu_638427",
         isPromo: true,
+        displayCategory: "brazil",
     },
     {
         id: "remote-install",
@@ -129,5 +138,33 @@ export const PRODUCTS: Product[] = [
         oldPriceKey: "product.price_remote_install", // Same price for service usually
         image: "/instalacao-remota.png",
         link: "https://pay.cakto.com.br/xhxaq8h_638384",
+        displayCategory: "service",
+    },
+    {
+        id: "champions-bundle",
+        category: "bundle",
+        badge: "EUROPEAN EDITION",
+        titleKey: "descriptions.champions_bundle_title",
+        descriptionKey: "descriptions.champions_bundle_desc",
+        priceKey: "product.price_champions_bundle",
+        oldPriceKey: "product.price_champions_bundle_old",
+        image: "/eafc26-bundle-promo.png", // Reusing for now
+        link: "https://go.invictuspay.app.br/3p65wtvjht",
+        displayCategory: "europe",
+        isPromo: true,
+    },
+    {
+        id: "world-cup-2026",
+        category: "ea-fc",
+        version: "Version WC 2026",
+        badge: "ROAD TO 2026",
+        titleKey: "descriptions.wc26_title",
+        descriptionKey: "descriptions.wc26_desc",
+        priceKey: "product.price_wc26",
+        oldPriceKey: "product.price_wc26_old",
+        image: "/site-26.png", // Reusing for now
+        link: "https://go.invictuspay.app.br/qaatnpzass",
+        displayCategory: "world-cup",
+        isPromo: true,
     }
 ];
