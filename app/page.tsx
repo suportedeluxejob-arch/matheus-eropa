@@ -11,8 +11,10 @@ import { useState } from "react"
 import Link from "next/link"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
+import { useLanguage } from "@/app/context/language-context"
 
 export default function Home() {
+  const { t } = useLanguage()
   const [paymentModal, setPaymentModal] = useState({
     isOpen: false,
     pixLink: "",
@@ -36,23 +38,22 @@ export default function Home() {
       <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto w-full text-center animate-fade-in">
           <Badge className="mb-4 sm:mb-6 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 inline-block text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-2.5">
-            🎮 Patches Completos
+            {t("hero.badge")}
           </Badge>
-          
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-slide-up">
-            Leve sua experiência no
+            {t("hero.title_start")}
             <span className="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
               {" "}
-              futebol virtual{" "}
+              {t("hero.title_highlight")}{" "}
             </span>
-            a outro nível
+            {t("hero.title_end")}
           </h1>
-          
+
           <p className="text-base sm:text-lg md:text-xl text-white/80 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
-            Com o WG Patch Futebol, o patch mais completo e realista do mercado! Times brasileiros clássicos, jogadores
-            lendários, ligas licenciadas e instalação remota.
+            {t("hero.description")}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
               asChild
@@ -60,7 +61,7 @@ export default function Home() {
               variant="outline"
               className="border-white/20 text-white hover:bg-white/10 bg-transparent hover:border-white/40 font-bold h-12 sm:h-14"
             >
-              <Link href="/demonstracao">Ver Demonstração</Link>
+              <Link href="/demonstracao">{t("hero.cta")}</Link>
             </Button>
           </div>
         </div>
@@ -70,8 +71,8 @@ export default function Home() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Escolha Sua Plataforma</h2>
-            <p className="text-white/70 text-xl">Patches para todas as plataformas</p>
+            <h2 className="text-4xl font-bold text-white mb-4">{t("platforms.title")}</h2>
+            <p className="text-white/70 text-xl">{t("platforms.subtitle")}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -81,28 +82,28 @@ export default function Home() {
                 icon: "🎮",
                 color: "from-blue-500 to-blue-600",
                 href: "/ps4",
-                desc: "PlayStation 4",
+                desc: t("navbar.ps4"),
               },
               {
                 name: "PlayStation 5",
                 icon: "🎮",
                 color: "from-blue-400 to-blue-500",
                 href: "/ps5",
-                desc: "PlayStation 5",
+                desc: t("navbar.ps5"),
               },
               {
                 name: "Xbox Series",
                 icon: "🎯",
                 color: "from-green-500 to-green-600",
                 href: "/xbox",
-                desc: "Xbox Series",
+                desc: t("navbar.xbox"),
               },
               {
                 name: "PC Gaming",
                 icon: "💻",
                 color: "from-cyan-500 to-cyan-600",
                 href: "/pc",
-                desc: "PC Gaming",
+                desc: t("navbar.pc"),
               },
             ].map((platform, index) => (
               <Link key={index} href={platform.href}>
@@ -112,7 +113,7 @@ export default function Home() {
                       {platform.icon}
                     </div>
                     <h3 className="text-white font-semibold text-lg mb-2">{platform.desc}</h3>
-                    <p className="text-white/60 text-sm">Patches otimizados</p>
+                    <p className="text-white/60 text-sm">{t("platforms.optimized")}</p>
                   </CardContent>
                 </Card>
               </Link>
@@ -125,9 +126,9 @@ export default function Home() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-red-600/20 text-red-300 border-red-500/30">🔥 DESTAQUE</Badge>
-            <h2 className="text-4xl font-bold text-white mb-4">Produtos em Destaque</h2>
-            <p className="text-white/70 text-xl">Os patches mais populares e completos</p>
+            <Badge className="mb-4 bg-red-600/20 text-red-300 border-red-500/30">{t("featured.badge")}</Badge>
+            <h2 className="text-4xl font-bold text-white mb-4">{t("featured.title")}</h2>
+            <p className="text-white/70 text-xl">{t("featured.subtitle")}</p>
           </div>
 
           <div className="mb-12">
@@ -139,7 +140,7 @@ export default function Home() {
                 <div className="relative w-full max-w-sm mx-auto md:max-w-none aspect-[3/4] overflow-hidden rounded-lg border-2 border-purple-500/30 bg-black">
                   <img
                     src="/images/egs-easportsfc26standardedition-eacanada-s2-1200x1600-effee280c00b9890a0c5249d4b0e5c97.jpg"
-                    alt="EA Sports FC 26 - Mídia Digital"
+                    alt={`EA Sports FC 26 - ${t("product.digital_media")}`}
                     className="w-full h-full object-contain rounded-lg"
                   />
 
@@ -170,7 +171,7 @@ export default function Home() {
                     </div>
 
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                      EA Sports FC 26 - Mídia Digital
+                      EA Sports FC 26 - {t("product.digital_media")}
                     </h3>
 
                     <p className="text-white/90 mb-4 md:mb-6 text-base md:text-lg leading-relaxed">
@@ -185,15 +186,15 @@ export default function Home() {
                       </div>
                       <div className="flex items-center gap-2 text-cyan-300">
                         <Check className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-                        <span className="text-xs md:text-sm">Acesso Imediato</span>
+                        <span className="text-xs md:text-sm">{t("product.immediate_access")}</span>
                       </div>
                       <div className="flex items-center gap-2 text-cyan-300">
                         <Check className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-                        <span className="text-xs md:text-sm">Licença Oficial</span>
+                        <span className="text-xs md:text-sm">{t("product.official_license")}</span>
                       </div>
                       <div className="flex items-center gap-2 text-cyan-300">
                         <Check className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-                        <span className="text-xs md:text-sm">Suporte Total</span>
+                        <span className="text-xs md:text-sm">{t("product.total_support")}</span>
                       </div>
                     </div>
                   </div>
@@ -201,36 +202,34 @@ export default function Home() {
                   <div>
                     <div className="mb-4 md:mb-6 p-3 md:p-4 bg-black/30 rounded-lg border border-purple-500/30">
                       <h4 className="text-white font-semibold mb-2 md:mb-3 text-center text-sm md:text-base">
-                        Escolha o Tipo de Licença:
+                        {t("product.choose_license")}
                       </h4>
                       <div className="grid grid-cols-2 gap-2 md:gap-3">
                         <button
                           onClick={() => setSelectedLicense("secundaria")}
-                          className={`p-3 md:p-4 rounded-lg border-2 transition-all ${
-                            selectedLicense === "secundaria"
-                              ? "border-cyan-500 bg-cyan-500/20 shadow-lg shadow-cyan-500/50"
-                              : "border-white/20 bg-white/5 hover:border-cyan-500/50"
-                          }`}
+                          className={`p-3 md:p-4 rounded-lg border-2 transition-all ${selectedLicense === "secundaria"
+                            ? "border-cyan-500 bg-cyan-500/20 shadow-lg shadow-cyan-500/50"
+                            : "border-white/20 bg-white/5 hover:border-cyan-500/50"
+                            }`}
                         >
                           <div className="text-center">
-                            <p className="text-white font-bold text-sm md:text-lg mb-1">Secundária</p>
+                            <p className="text-white font-bold text-sm md:text-lg mb-1">{t("product.secondary")}</p>
                             <p className="text-cyan-400 font-bold text-lg md:text-2xl">R$ 29,90</p>
-                            <p className="text-white/60 text-[10px] md:text-xs mt-1">Conta compartilhada</p>
+                            <p className="text-white/60 text-[10px] md:text-xs mt-1">{t("product.shared_account")}</p>
                           </div>
                         </button>
 
                         <button
                           onClick={() => setSelectedLicense("primaria")}
-                          className={`p-3 md:p-4 rounded-lg border-2 transition-all ${
-                            selectedLicense === "primaria"
-                              ? "border-purple-500 bg-purple-500/20 shadow-lg shadow-purple-500/50"
-                              : "border-white/20 bg-white/5 hover:border-purple-500/50"
-                          }`}
+                          className={`p-3 md:p-4 rounded-lg border-2 transition-all ${selectedLicense === "primaria"
+                            ? "border-purple-500 bg-purple-500/20 shadow-lg shadow-purple-500/50"
+                            : "border-white/20 bg-white/5 hover:border-purple-500/50"
+                            }`}
                         >
                           <div className="text-center">
-                            <p className="text-white font-bold text-sm md:text-lg mb-1">Primária</p>
+                            <p className="text-white font-bold text-sm md:text-lg mb-1">{t("product.primary")}</p>
                             <p className="text-purple-400 font-bold text-lg md:text-2xl">R$ 74,90</p>
-                            <p className="text-white/60 text-[10px] md:text-xs mt-1">Conta exclusiva</p>
+                            <p className="text-white/60 text-[10px] md:text-xs mt-1">{t("product.exclusive_account")}</p>
                           </div>
                         </button>
                       </div>
@@ -257,20 +256,20 @@ export default function Home() {
                             ? "https://go.invictuspay.app.br/p9z3m78rwl"
                             : "https://go.invictuspay.app.br/ywfgl87azm",
                           "", // Credit card link - to be added
-                          `EA Sports FC 26 - Mídia Digital (${selectedLicense === "secundaria" ? "Licença Secundária" : "Licença Primária"})`,
+                          `EA Sports FC 26 - ${t("product.digital_media")} (${selectedLicense === "secundaria" ? "Licença " + t("product.secondary") : "Licença " + t("product.primary")})`,
                         )
                       }
                       className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 text-white font-bold text-base md:text-lg py-4 md:py-6 shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70 transition-all"
                     >
                       <Download className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                       <span className="truncate">
-                        Comprar Agora - {selectedLicense === "secundaria" ? "Licença Secundária" : "Licença Primária"}
+                        {t("product.buy_now")} - {selectedLicense === "secundaria" ? "Licença " + t("product.secondary") : "Licença " + t("product.primary")}
                       </span>
                     </Button>
 
                     <div className="mt-3 md:mt-4 flex items-center justify-center gap-2 text-purple-300 text-xs md:text-sm">
                       <Shield className="h-3 w-3 md:h-4 md:w-4" />
-                      <span>Compra 100% Segura e Garantida</span>
+                      <span>{t("product.secure_purchase")}</span>
                     </div>
                   </div>
                 </div>
@@ -284,7 +283,7 @@ export default function Home() {
               <div className="relative">
                 <img
                   src="/eafc26-bundle-promo.png"
-                  alt="PATCH EAFC 26 + JOGO EAFC 26"
+                  alt={t("descriptions.eafc26_bundle_title")}
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute top-3 left-3">
@@ -294,11 +293,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-6">
-                <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">Pacote Completo</Badge>
+                <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">{t("product.complete_package")}</Badge>
                 <div className="mb-3">
                   <CountdownTimer hours={0.083} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">PATCH EAFC 26 + JOGO EAFC 26</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.eafc26_bundle_title")}</h3>
                 <p className="text-white/70 mb-4">
                   Super promoção! Jogo completo EA FC 26 + patch premium com times brasileiros. Mídia digital na sua
                   conta.
@@ -312,13 +311,13 @@ export default function Home() {
                     openPaymentModal(
                       "https://go.invictuspay.app.br/3p65wtvjht",
                       "https://pay.cakto.com.br/agtjpxf_638373",
-                      "PATCH EAFC 26 + JOGO EAFC 26",
+                      t("descriptions.eafc26_bundle_title"),
                     )
                   }
                   className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Comprar Agora - Super Oferta
+                  {t("product.buy_now")} - Super Oferta
                 </Button>
               </div>
             </Card>
@@ -326,7 +325,7 @@ export default function Home() {
             {/* EAFC 26 Product - NEW LAUNCH */}
             <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
               <div className="relative">
-                <img src="/site-26.png" alt="EAFC 26 - Times Brasileiros" className="w-full h-48 object-cover" />
+                <img src="/site-26.png" alt={t("descriptions.eafc26_title")} className="w-full h-48 object-cover" />
                 <div className="absolute top-3 left-3 flex flex-col gap-2">
                   <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold animate-pulse">
                     🚀 LANÇAMENTO
@@ -336,9 +335,9 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">EA Sports FC 26</Badge>
-                <h3 className="text-xl font-bold text-white mb-3">EAFC 26 - Times Brasileiros</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.eafc26_title")}</h3>
                 <p className="text-white/70 mb-4">
-                  O mais novo lançamento! Patch completo do EA Sports FC 26 com todos os times brasileiros licenciados.
+                  {t("descriptions.eafc26_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="text-2xl font-bold text-cyan-400">R$ 59,90</div>
@@ -349,13 +348,13 @@ export default function Home() {
                     openPaymentModal(
                       "https://go.invictuspay.app.br/qaatnpzass",
                       "https://pay.cakto.com.br/5jgfx87_638363",
-                      "EAFC 26 - Times Brasileiros",
+                      t("descriptions.eafc26_title"),
                     )
                   }
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Comprar Agora
+                  {t("product.buy_now")}
                 </Button>
               </div>
             </Card>
@@ -365,16 +364,16 @@ export default function Home() {
               <div className="relative">
                 <img
                   src="/eafc25-brasileiros.png"
-                  alt="EAFC 25 - Times Brasileiros"
+                  alt={t("descriptions.eafc25_title")}
                   className="w-full h-48 object-cover"
                 />
                 <Badge className="absolute top-3 left-3 bg-red-600/90 text-white">50% OFF</Badge>
               </div>
               <div className="p-6">
                 <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">EA Sports FC 25</Badge>
-                <h3 className="text-xl font-bold text-white mb-3">EAFC 25 - Times Brasileiros</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.eafc25_title")}</h3>
                 <p className="text-white/70 mb-4">
-                  O patch mais completo do EA Sports FC 25 com todos os times brasileiros licenciados.
+                  {t("descriptions.eafc25_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="text-2xl font-bold text-cyan-400">R$ 49,90</div>
@@ -385,13 +384,13 @@ export default function Home() {
                     openPaymentModal(
                       "https://go.invictuspay.app.br/fuv2ufja8l",
                       "https://pay.cakto.com.br/39xfxuj_638367",
-                      "EAFC 25 - Times Brasileiros",
+                      t("descriptions.eafc25_title"),
                     )
                   }
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Comprar Agora
+                  {t("product.buy_now")}
                 </Button>
               </div>
             </Card>
@@ -401,7 +400,7 @@ export default function Home() {
               <div className="relative">
                 <img
                   src="/eafc25-bundle.png"
-                  alt="PATCH EAFC 25 + JOGO EAFC 25 - Times Brasileiros"
+                  alt={t("descriptions.eafc25_bundle_title")}
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute top-3 left-3 flex flex-col gap-2">
@@ -409,10 +408,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-6">
-                <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">Pacote Completo</Badge>
-                <h3 className="text-xl font-bold text-white mb-3">PATCH EAFC 25 + JOGO EAFC 25</h3>
+                <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">{t("product.complete_package")}</Badge>
+                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.eafc25_bundle_title")}</h3>
                 <p className="text-white/70 mb-4">
-                  Pacote completo com o jogo EA FC 25 + patch premium com times brasileiros.
+                  {t("descriptions.eafc25_bundle_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="text-2xl font-bold text-cyan-400">R$ 79,90</div>
@@ -423,13 +422,13 @@ export default function Home() {
                     openPaymentModal(
                       "https://go.invictuspay.app.br/rt0t2uecxd",
                       "https://pay.cakto.com.br/39xfxuj_638367",
-                      "PATCH EAFC 25 + JOGO EAFC 25",
+                      t("descriptions.eafc25_bundle_title"),
                     )
                   }
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Comprar Agora
+                  {t("product.buy_now")}
                 </Button>
               </div>
             </Card>
@@ -439,16 +438,16 @@ export default function Home() {
               <div className="relative">
                 <img
                   src="/eafc24-brasileiros.png"
-                  alt="EAFC 24 - Times Brasileiros"
+                  alt={t("descriptions.eafc24_title")}
                   className="w-full h-48 object-cover"
                 />
                 <Badge className="absolute top-3 left-3 bg-orange-600/90 text-white">50% OFF</Badge>
               </div>
               <div className="p-6">
                 <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">EA Sports FC 24</Badge>
-                <h3 className="text-xl font-bold text-white mb-3">EAFC 24 - Times Brasileiros</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.eafc24_title")}</h3>
                 <p className="text-white/70 mb-4">
-                  A versão clássica do EA Sports FC 24 com todos os times brasileiros.
+                  {t("descriptions.eafc24_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="text-2xl font-bold text-cyan-400">R$ 39,90</div>
@@ -459,13 +458,13 @@ export default function Home() {
                     openPaymentModal(
                       "https://go.invictuspay.app.br/kllijhnfgx",
                       "https://pay.cakto.com.br/337h6fv_638368",
-                      "EAFC 24 - Times Brasileiros",
+                      t("descriptions.eafc24_title"),
                     )
                   }
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Comprar Agora
+                  {t("product.buy_now")}
                 </Button>
               </div>
             </Card>
@@ -482,9 +481,9 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">eFootball PES 2021</Badge>
-                <h3 className="text-xl font-bold text-white mb-3">PES 2021 VERSÃO 25 + JOGO PES 21</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.pes21_bundle_title")}</h3>
                 <p className="text-white/70 mb-4">
-                  O bundle completo com o jogo PES 2021 original + patch com todos os times brasileiros.
+                  {t("descriptions.pes21_bundle_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="text-2xl font-bold text-cyan-400">R$ 59,90</div>
@@ -495,13 +494,13 @@ export default function Home() {
                     openPaymentModal(
                       "https://go.invictuspay.app.br/ovmhlg21rh",
                       "https://pay.cakto.com.br/3634a38_638395",
-                      "PES 2021 VERSÃO 25 + JOGO PES 21",
+                      t("descriptions.pes21_bundle_title"),
                     )
                   }
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Comprar Agora
+                  {t("product.buy_now")}
                 </Button>
               </div>
             </Card>
@@ -518,9 +517,9 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">eFootball PES 2021</Badge>
-                <h3 className="text-xl font-bold text-white mb-3">PES 2021 VERSÃO 25 - TIMES BRASILEIROS</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.pes21_patch_title")}</h3>
                 <p className="text-white/70 mb-4">
-                  Patch premium com todos os times brasileiros atualizados para 2025.
+                  {t("descriptions.pes21_patch_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="text-2xl font-bold text-cyan-400">R$ 34,90</div>
@@ -531,13 +530,13 @@ export default function Home() {
                     openPaymentModal(
                       "https://go.invictuspay.app.br/qcgqeanwjc",
                       "https://pay.cakto.com.br/8fekayj_638394",
-                      "PES 2021 VERSÃO 25 - TIMES BRASILEIROS",
+                      t("descriptions.pes21_patch_title"),
                     )
                   }
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Comprar Agora
+                  {t("product.buy_now")}
                 </Button>
               </div>
             </Card>
@@ -547,16 +546,16 @@ export default function Home() {
               <div className="relative">
                 <img
                   src="/dfl25-celular.png"
-                  alt="DFL 25 - Times Brasileiros Celular"
+                  alt={t("descriptions.dfl25_title")}
                   className="w-full h-48 object-cover"
                 />
                 <Badge className="absolute top-3 left-3 bg-red-600/90 text-white">50% OFF</Badge>
               </div>
               <div className="p-6">
                 <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">Mobile Gaming</Badge>
-                <h3 className="text-xl font-bold text-white mb-3">DFL 25 - TIMES BRASILEIROS CELULAR</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.dfl25_title")}</h3>
                 <p className="text-white/70 mb-4">
-                  Experimente o futebol brasileiro no seu celular com times atualizados.
+                  {t("descriptions.dfl25_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="text-2xl font-bold text-cyan-400">R$ 29,90</div>
@@ -567,13 +566,13 @@ export default function Home() {
                     openPaymentModal(
                       "https://pay.cakto.com.br/xa54qtu_638427",
                       "https://pay.cakto.com.br/xa54qtu_638427",
-                      "DFL 25 - TIMES BRASILEIROS CELULAR",
+                      t("descriptions.dfl25_title"),
                     )
                   }
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Comprar Agora
+                  {t("product.buy_now")}
                 </Button>
               </div>
             </Card>
@@ -581,17 +580,16 @@ export default function Home() {
             {/* Remote Installation Service */}
             <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
               <div className="relative">
-                <img src="/instalacao-remota.png" alt="Instalação Remota" className="w-full h-48 object-cover" />
-                <Badge className="absolute top-3 left-3 bg-blue-600/90 text-white">SERVIÇO</Badge>
+                <img src="/instalacao-remota.png" alt={t("descriptions.remote_install_title")} className="w-full h-48 object-cover" />
+                <Badge className="absolute top-3 left-3 bg-blue-600/90 text-white">{t("featured.service")}</Badge>
               </div>
               <div className="p-6">
                 <Badge className="mb-3 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 w-fit">
-                  Instalação Profissional
+                  {t("descriptions.remote_install_title")}
                 </Badge>
-                <h3 className="text-xl font-bold text-white mb-3">INSTALAÇÃO REMOTA</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{t("descriptions.remote_install_title")}</h3>
                 <p className="text-white/70 mb-4">
-                  Serviço de instalação remota profissional para FC24, FC25 e PES 2021. Rápido, seguro e sem
-                  complicação.
+                  {t("descriptions.remote_install_desc")}
                 </p>
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="text-2xl font-bold text-cyan-400">R$ 19,90</div>
@@ -601,26 +599,26 @@ export default function Home() {
                     openPaymentModal(
                       "https://pay.cakto.com.br/xhxaq8h_638384",
                       "https://pay.cakto.com.br/xhxaq8h_638384",
-                      "INSTALAÇÃO REMOTA",
+                      t("descriptions.remote_install_title"),
                     )
                   }
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Contratar Serviço
+                  {t("product.contract_service")}
                 </Button>
               </div>
             </Card>
           </div>
-        </div>
-      </section>
+        </div >
+      </section >
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-black/20">
+      < section className="py-20 px-4 bg-black/20" >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Por Que Escolher Nossos Patches?</h2>
-            <p className="text-white/70 text-xl">Qualidade, confiança e praticidade</p>
+            <h2 className="text-4xl font-bold text-white mb-4">{t("features.title")}</h2>
+            <p className="text-white/70 text-xl">{t("features.subtitle")}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -629,8 +627,8 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   <Zap className="h-12 w-12 text-cyan-400" />
                   <div>
-                    <CardTitle className="text-white text-xl">Instalação Remota</CardTitle>
-                    <CardDescription className="text-white/70">Instalação rápida e sem complicação</CardDescription>
+                    <CardTitle className="text-white text-xl">{t("features.remote_install_title")}</CardTitle>
+                    <CardDescription className="text-white/70">{t("features.remote_install_desc")}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -641,8 +639,8 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   <Users className="h-12 w-12 text-cyan-400" />
                   <div>
-                    <CardTitle className="text-white text-xl">Times Brasileiros</CardTitle>
-                    <CardDescription className="text-white/70">Times clássicos e jogadores lendários</CardDescription>
+                    <CardTitle className="text-white text-xl">{t("features.brazilian_teams_title")}</CardTitle>
+                    <CardDescription className="text-white/70">{t("features.brazilian_teams_desc")}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -653,9 +651,9 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   <Trophy className="h-12 w-12 text-cyan-400" />
                   <div>
-                    <CardTitle className="text-white text-xl">Ligas Licenciadas</CardTitle>
+                    <CardTitle className="text-white text-xl">{t("features.licensed_leagues_title")}</CardTitle>
                     <CardDescription className="text-white/70">
-                      Conteúdo exclusivo e atualizações constantes
+                      {t("features.licensed_leagues_desc")}
                     </CardDescription>
                   </div>
                 </div>
@@ -663,16 +661,16 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Testimonials Section */}
-      <TestimonialsSection />
+      < TestimonialsSection />
 
       {/* Contact Section */}
-      <ContactSection />
+      < ContactSection />
 
       {/* Payment Method Modal */}
-      <PaymentMethodModal
+      < PaymentMethodModal
         isOpen={paymentModal.isOpen}
         onClose={closePaymentModal}
         pixLink={paymentModal.pixLink}
@@ -681,6 +679,6 @@ export default function Home() {
       />
 
       <Footer />
-    </div>
+    </div >
   )
 }

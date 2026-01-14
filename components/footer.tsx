@@ -1,6 +1,11 @@
+"use client"
+
 import Link from "next/link"
+import { useLanguage } from "@/app/context/language-context"
 
 export function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="border-t border-white/10 bg-black/40 py-12 px-4">
       <div className="container mx-auto">
@@ -11,50 +16,50 @@ export function Footer() {
               <span className="text-xl font-bold text-white">WG PATCH</span>
             </div>
             <p className="text-white/70">
-              Transformando a experiência gaming com patches de qualidade e instalação profissional.
+              {t("footer.description")}
             </p>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Plataformas</h4>
+            <h4 className="text-white font-semibold mb-4">{t("footer.platforms")}</h4>
             <ul className="space-y-2 text-white/70">
               <li>
                 <Link href="/ps4" className="hover:text-cyan-400 transition-colors">
-                  PlayStation 4
+                  {t("navbar.ps4")}
                 </Link>
               </li>
               <li>
                 <Link href="/ps5" className="hover:text-cyan-400 transition-colors">
-                  PlayStation 5
+                  {t("navbar.ps5")}
                 </Link>
               </li>
               <li>
                 <Link href="/xbox" className="hover:text-cyan-400 transition-colors">
-                  Xbox Series
+                  {t("navbar.xbox")}
                 </Link>
               </li>
               <li>
                 <Link href="/pc" className="hover:text-cyan-400 transition-colors">
-                  PC Gaming
+                  {t("navbar.pc")}
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Suporte</h4>
+            <h4 className="text-white font-semibold mb-4">{t("footer.support")}</h4>
             <ul className="space-y-2 text-white/70">
-              <li>Instalação</li>
-              <li>Tutoriais</li>
-              <li>FAQ</li>
-              <li>Contato</li>
+              <li>{t("footer.install")}</li>
+              <li>{t("footer.tutorials")}</li>
+              <li>{t("footer.faq")}</li>
+              <li>{t("footer.contact")}</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Empresa</h4>
+            <h4 className="text-white font-semibold mb-4">{t("footer.company")}</h4>
             <ul className="space-y-2 text-white/70">
-              <li>Sobre Nós</li>
-              <li>Termos de Uso</li>
-              <li>Privacidade</li>
-              <li>Blog</li>
+              <li>{t("footer.about")}</li>
+              <li>{t("footer.terms")}</li>
+              <li>{t("footer.privacy")}</li>
+              <li>{t("footer.blog")}</li>
             </ul>
           </div>
         </div>
@@ -85,7 +90,7 @@ export function Footer() {
             </a>
           </div>
           <div className="text-center text-white/60">
-            <p>&copy; 2024 WG PATCH. Todos os direitos reservados.</p>
+            <p>&copy; 2024 WG PATCH. {t("footer.rights")}</p>
           </div>
         </div>
       </div>

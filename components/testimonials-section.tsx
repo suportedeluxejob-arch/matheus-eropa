@@ -5,8 +5,10 @@ import { Badge } from "@/components/ui/badge"
 import { Star, MessageCircle, CheckCircle2, X } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
+import { useLanguage } from "@/app/context/language-context"
 
 export function TestimonialsSection() {
+  const { t } = useLanguage()
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [selectedTestimonial, setSelectedTestimonial] = useState<any>(null)
 
@@ -60,9 +62,9 @@ export function TestimonialsSection() {
       <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Feedbacks de Clientes Satisfeitos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t("testimonials.title")}</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Veja o que nossos clientes estão falando sobre nossos patches
+              {t("testimonials.subtitle")}
             </p>
           </div>
 
@@ -99,7 +101,7 @@ export function TestimonialsSection() {
 
                   <Badge className="mt-3 bg-green-500 hover:bg-green-600 text-white">
                     <CheckCircle2 className="w-3 h-3 mr-1" />
-                    Cliente Verificado
+                    {t("testimonials.verified_client")}
                   </Badge>
                 </CardContent>
               </Card>
@@ -119,8 +121,8 @@ export function TestimonialsSection() {
                 ))}
               </div>
               <div className="text-left">
-                <p className="font-semibold text-gray-900">+500 Clientes Satisfeitos</p>
-                <p className="text-sm text-gray-600">Avaliação média: 4.9/5</p>
+                <p className="font-semibold text-gray-900">{t("testimonials.satisfied_customers")}</p>
+                <p className="text-sm text-gray-600">{t("testimonials.average_rating")}</p>
               </div>
             </div>
           </div>
@@ -152,7 +154,7 @@ export function TestimonialsSection() {
                       <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     ))}
                     <CheckCircle2 className="w-4 h-4 text-green-500 ml-2" />
-                    <span className="text-sm text-green-600 ml-1">Cliente Verificado</span>
+                    <span className="text-sm text-green-600 ml-1">{t("testimonials.verified_client")}</span>
                   </div>
                 </div>
               </div>
