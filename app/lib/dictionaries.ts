@@ -84,7 +84,8 @@ export const dictionary = {
       price_champions_bundle: "€ 89,90",
       price_champions_bundle_old: "€ 179,90",
       price_wc26: "€ 44,90",
-      price_wc26_old: "€ 89,90"
+      price_wc26_old: "€ 89,90",
+      compatibility_all: "PS5, PS4, Xbox Series X|S e Xbox One."
     },
     descriptions: {
       eafc26_bundle_title: "PARCHE EAFC 26 + JUEGO EAFC 26",
@@ -245,7 +246,8 @@ export const dictionary = {
       price_champions_bundle: "€ 89,90",
       price_champions_bundle_old: "€ 179,90",
       price_wc26: "€ 44,90",
-      price_wc26_old: "€ 89,90"
+      price_wc26_old: "€ 89,90",
+      compatibility_all: "PS5, PS4, Xbox Series X|S e Xbox One."
     },
     descriptions: {
       eafc26_bundle_title: "PATCH EAFC 26 + GIOCO EAFC 26",

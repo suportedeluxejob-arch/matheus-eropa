@@ -67,9 +67,15 @@ export function ProductCard({ product, onBuy }: ProductCardProps) {
                     {t(product.titleKey)}
                 </h3>
 
-                <p className="text-sm text-muted-foreground mb-6 line-clamp-3 leading-relaxed">
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-3 leading-relaxed">
                     {t(product.descriptionKey)}
                 </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="text-[10px] font-bold text-primary/80 bg-primary/5 border border-primary/20 px-2 py-1 rounded-md tracking-tight">
+                        {t("product.compatibility_all")}
+                    </span>
+                </div>
 
                 {/* Pricing Area - Always at bottom of text area */}
                 <div className="mt-auto pt-4 border-t border-white/5">
@@ -87,8 +93,8 @@ export function ProductCard({ product, onBuy }: ProductCardProps) {
                     <Button
                         onClick={() => onBuy(product.link, product.cardLink || "", t(product.titleKey))}
                         className={`w-full h-12 rounded-xl font-black text-sm uppercase tracking-widest transition-all duration-300 shadow-xl ${product.id.includes('bundle')
-                                ? "bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 shadow-red-500/10"
-                                : "bg-primary hover:bg-primary/90 text-primary-foreground shadow-primary/10"
+                            ? "bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 shadow-red-500/10"
+                            : "bg-primary hover:bg-primary/90 text-primary-foreground shadow-primary/10"
                             }`}
                     >
                         <Download className="mr-2.5 h-4 w-4" />
