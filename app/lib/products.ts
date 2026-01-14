@@ -213,7 +213,7 @@ export const PRODUCTS: Product[] = [
         descriptionKey: "descriptions.la_liga_desc",
         priceKey: "product.price_europe_standard",
         oldPriceKey: "product.price_europe_standard_old",
-        image: "/eafc26-bundle-promo.png",
+        image: "https://iili.io/fSdZa7s.md.png",
         link: "https://go.invictuspay.app.br/3p65wtvjht",
         displayCategory: "europe",
         isPromo: true,
