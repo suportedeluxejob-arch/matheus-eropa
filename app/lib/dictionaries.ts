@@ -13,7 +13,7 @@ export const dictionary = {
       menu: "Menú"
     },
     hero: {
-      badge: "🎮 Parches Completos",
+      badge: "Parches Completos",
       title_start: "Lleva tu experiencia de",
       title_highlight: "fútbol virtual",
       title_end: "a otro nivel",
@@ -26,11 +26,11 @@ export const dictionary = {
       optimized: "Parches optimizados"
     },
     featured: {
-      badge: "🔥 DESTACADO",
+      badge: "DESTACADO",
       title: "Productos Destacados",
       subtitle: "Los parches más populares y completos",
-      super_promo: "🔥 SÚPER PROMOCIÓN",
-      launch: "🚀 LANZAMIENTO",
+      super_promo: "SÚPER PROMOCIÓN",
+      launch: "LANZAMIENTO",
       bundle: "PAQUETE",
       service: "SERVICIO",
       patch: "PARCHE",
@@ -145,7 +145,7 @@ export const dictionary = {
       menu: "Menu"
     },
     hero: {
-      badge: "🎮 Patch Complete",
+      badge: "Patch Complete",
       title_start: "Porta la tua esperienza di",
       title_highlight: "calcio virtuale",
       title_end: "a un altro livello",
@@ -158,11 +158,11 @@ export const dictionary = {
       optimized: "Patch ottimizzate"
     },
     featured: {
-      badge: "🔥 IN EVIDENZA",
+      badge: "IN EVIDENZA",
       title: "Prodotti in Evidenza",
       subtitle: "Le patch più popolari e complete",
-      super_promo: "🔥 SUPER PROMOZIONE",
-      launch: "🚀 LANCIO",
+      super_promo: "SUPER PROMOZIONE",
+      launch: "LANCIO",
       bundle: "PACCHETTO",
       service: "SERVIZIO",
       patch: "PATCH",

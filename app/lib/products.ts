@@ -18,7 +18,7 @@ export const PRODUCTS: Product[] = [
     {
         id: "eafc26-bundle",
         category: "bundle",
-        badge: "🔥 SUPER PROMOÇÃO",
+        badge: "SUPER PROMOÇÃO",
         titleKey: "descriptions.eafc26_bundle_title",
         descriptionKey: "descriptions.eafc26_bundle_desc_short", // Need to ensure these keys exist
         priceKey: "product.price_eafc26_bundle",
@@ -33,7 +33,7 @@ export const PRODUCTS: Product[] = [
         id: "eafc26-standard",
         category: "ea-fc",
         version: "EA Sports FC 26",
-        badge: "🚀 LANÇAMENTO",
+        badge: "LANÇAMENTO",
         titleKey: "descriptions.eafc26_title",
         descriptionKey: "descriptions.eafc26_desc",
         priceKey: "product.price_eafc26",

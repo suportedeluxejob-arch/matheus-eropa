@@ -14,6 +14,8 @@ import { ContactSection } from "@/components/contact-section"
 import { useLanguage } from "@/app/context/language-context"
 import { PRODUCTS } from "@/app/lib/products"
 import { ProductCard } from "@/components/product-card"
+import { SITE_CONFIG } from "@/app/lib/site-config"
+import { HeroCarousel } from "@/components/hero-carousel"
 
 export default function Home() {
   const { t } = useLanguage()
@@ -35,7 +37,12 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background selection:bg-primary/30">
+      {/* Hero Carousel Banner Section */}
+      <section className="pt-28 pb-0">
+        <HeroCarousel />
+      </section>
+
       {/* Hero Section */}
       <section className="relative py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Glows */}
@@ -48,7 +55,7 @@ export default function Home() {
             {t("hero.badge")}
           </Badge>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[1.1] drop-shadow-2xl animate-fade-in-up delay-100">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-[1.1] drop-shadow-2xl animate-fade-in-up delay-100">
             {t("hero.title_start")}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-primary animate-gradient-x bg-[length:200%_auto]">
               {t("hero.title_highlight")}
@@ -91,44 +98,15 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                name: "PlayStation 4",
-                icon: "🎮",
-                color: "from-blue-600 to-indigo-600",
-                href: "/ps4",
-                desc: t("navbar.ps4"),
-              },
-              {
-                name: "PlayStation 5",
-                icon: "🎮",
-                color: "from-blue-500 to-cyan-500",
-                href: "/ps5",
-                desc: t("navbar.ps5"),
-              },
-              {
-                name: "Xbox Series",
-                icon: "🎯",
-                color: "from-emerald-500 to-green-600",
-                href: "/xbox",
-                desc: t("navbar.xbox"),
-              },
-              {
-                name: "PC Gaming",
-                icon: "💻",
-                color: "from-cyan-500 to-blue-600",
-                href: "/pc",
-                desc: t("navbar.pc"),
-              },
-            ].map((platform, index) => (
-              <Link key={index} href={platform.href} className="group">
+            {SITE_CONFIG.platforms.map((platform, index) => (
+              <Link key={index} href={`/${platform.id}`} className="group">
                 <Card className="glass-card h-full transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_0_30px_-5px_var(--primary)] group-hover:border-primary/30 overflow-hidden relative border-white/5">
                   <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${platform.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                   <CardContent className="p-8 text-center flex flex-col items-center h-full">
-                    <div className={`text-4xl mb-6 p-5 rounded-2xl bg-gradient-to-br ${platform.color} text-white shadow-lg shadow-black/20 group-hover:scale-110 transition-transform duration-500`}>
-                      {platform.icon}
+                    <div className={`text-4xl mb-6 p-5 rounded-2xl bg-gradient-to-br ${platform.color} text-white shadow-lg shadow-black/20 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center`}>
+                      <platform.icon size={32} />
                     </div>
-                    <h3 className="text-white font-bold text-xl mb-3 tracking-wide">{platform.desc}</h3>
+                    <h3 className="text-white font-bold text-xl mb-3 tracking-wide">{platform.name}</h3>
                     <p className="text-muted-foreground text-xs leading-relaxed uppercase tracking-widest font-bold opacity-60">{t("platforms.optimized")}</p>
                   </CardContent>
                 </Card>

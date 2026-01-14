@@ -10,6 +10,7 @@ import { useState } from "react"
 import { useLanguage } from "@/app/context/language-context"
 import { PRODUCTS } from "@/app/lib/products"
 import { ProductCard } from "@/components/product-card"
+import { HeroCarousel } from "@/components/hero-carousel"
 
 export default function CelularPage() {
   const { t } = useLanguage()
@@ -32,7 +33,12 @@ export default function CelularPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background selection:bg-primary/30">
+      {/* Hero Carousel Banner Section */}
+      <section className="pt-28 pb-0">
+        <HeroCarousel />
+      </section>
+
       {/* Hero Section */}
       <section className="relative py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10 animate-pulse" />
@@ -44,7 +50,7 @@ export default function CelularPage() {
             {t("navbar.mobile")} Gaming
           </Badge>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-[1.1] drop-shadow-2xl animate-fade-in-up delay-100">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-[1.1] drop-shadow-2xl animate-fade-in-up delay-100">
             Futebol Brasileiro
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-primary">
               no Celular
@@ -179,7 +185,7 @@ export default function CelularPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="glass-card p-10 border-white/5 rounded-[2.5rem] relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 text-8xl opacity-10 font-black group-hover:scale-110 transition-transform">iOS</div>
+              <div className="absolute top-0 right-0 p-8 text-6xl opacity-10 font-black group-hover:scale-110 transition-transform">iOS</div>
               <div className="relative z-10">
                 <Smartphone className="h-12 w-12 text-primary mb-6" />
                 <h3 className="text-2xl font-black text-white mb-8">iPhone & iPad</h3>
@@ -195,7 +201,7 @@ export default function CelularPage() {
             </Card>
 
             <Card className="glass-card p-10 border-white/5 rounded-[2.5rem] relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 text-8xl opacity-10 font-black group-hover:scale-110 transition-transform">ADR</div>
+              <div className="absolute top-0 right-0 p-8 text-6xl opacity-10 font-black group-hover:scale-110 transition-transform">ADR</div>
               <div className="relative z-10">
                 <Smartphone className="h-12 w-12 text-emerald-400 mb-6" />
                 <h3 className="text-2xl font-black text-white mb-8">Android</h3>
