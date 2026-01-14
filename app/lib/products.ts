@@ -40,7 +40,7 @@ export const PRODUCTS: Product[] = [
         descriptionKey: "descriptions.eafc26_desc",
         priceKey: "product.price_eafc26",
         oldPriceKey: "product.price_eafc26_old",
-        image: "/site-26.png",
+        image: "https://iili.io/fS2qsfe.png",
         link: "https://go.invictuspay.app.br/qaatnpzass",
         cardLink: "https://pay.cakto.com.br/5jgfx87_638363",
         isPromo: true,
