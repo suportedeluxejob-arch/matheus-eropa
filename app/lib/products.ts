@@ -174,7 +174,7 @@ export const PRODUCTS: Product[] = [
         descriptionKey: "descriptions.conference_league_desc",
         priceKey: "product.price_europe_standard",
         oldPriceKey: "product.price_europe_standard_old",
-        image: "https://iili.io/fSJQIEX.md.png",
+        image: "https://iili.io/fSdSEy7.md.png",
         link: "https://go.invictuspay.app.br/3p65wtvjht",
         displayCategory: "europe",
         isPromo: true,
