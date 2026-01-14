@@ -35,33 +35,45 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-cyan-900">
       {/* Hero Section */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto w-full text-center animate-fade-in">
-          <Badge className="mb-4 sm:mb-6 bg-cyan-600/20 text-cyan-300 border-cyan-500/30 inline-block text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-2.5">
+      {/* Hero Section */}
+      <section className="relative py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Glows */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10 animate-pulse" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-background to-background -z-20" />
+
+        <div className="max-w-5xl mx-auto w-full text-center hover:scale-[1.01] transition-transform duration-700 ease-out">
+          <Badge className="mb-8 bg-primary/10 text-primary border-primary/20 backdrop-blur-md inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium tracking-wide uppercase shadow-[0_0_15px_-3px_var(--primary)] animate-fade-in-up">
+            <Star className="w-3.5 h-3.5 fill-current" />
             {t("hero.badge")}
           </Badge>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-slide-up">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[1.1] drop-shadow-2xl animate-fade-in-up delay-100">
             {t("hero.title_start")}
-            <span className="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-              {" "}
-              {t("hero.title_highlight")}{" "}
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-gradient-x bg-[length:200%_auto]">
+              {t("hero.title_highlight")}
             </span>
             {t("hero.title_end")}
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-white/80 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
             {t("hero.description")}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-300">
+            <Button
+              asChild
+              size="lg"
+              className="h-14 px-8 text-lg bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] transition-all duration-300 transform hover:-translate-y-1 rounded-full font-bold"
+            >
+              <Link href="/demonstracao">{t("hero.cta")}</Link>
+            </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 bg-transparent hover:border-white/40 font-bold h-12 sm:h-14"
+              className="h-14 px-8 text-lg border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm hover:border-white/20 text-white rounded-full transition-all duration-300"
             >
-              <Link href="/demonstracao">{t("hero.cta")}</Link>
+              <Link href="#products">Ver Produtos</Link>
             </Button>
           </div>
         </div>
@@ -80,40 +92,41 @@ export default function Home() {
               {
                 name: "PlayStation 4",
                 icon: "🎮",
-                color: "from-blue-500 to-blue-600",
+                color: "from-blue-600 to-indigo-600",
                 href: "/ps4",
                 desc: t("navbar.ps4"),
               },
               {
                 name: "PlayStation 5",
                 icon: "🎮",
-                color: "from-blue-400 to-blue-500",
+                color: "from-blue-500 to-cyan-500",
                 href: "/ps5",
                 desc: t("navbar.ps5"),
               },
               {
                 name: "Xbox Series",
                 icon: "🎯",
-                color: "from-green-500 to-green-600",
+                color: "from-emerald-500 to-green-600",
                 href: "/xbox",
                 desc: t("navbar.xbox"),
               },
               {
                 name: "PC Gaming",
                 icon: "💻",
-                color: "from-cyan-500 to-cyan-600",
+                color: "from-cyan-500 to-blue-600",
                 href: "/pc",
                 desc: t("navbar.pc"),
               },
             ].map((platform, index) => (
-              <Link key={index} href={platform.href}>
-                <Card className="bg-black/30 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all cursor-pointer h-full">
-                  <CardContent className="p-8 text-center">
-                    <div className={`text-4xl mb-4 p-4 rounded-full bg-gradient-to-r ${platform.color} w-fit mx-auto`}>
+              <Link key={index} href={platform.href} className="group">
+                <Card className="glass-card h-full transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_0_30px_-5px_var(--primary)] group-hover:border-primary/30 overflow-hidden relative">
+                  <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${platform.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <CardContent className="p-8 text-center flex flex-col items-center h-full">
+                    <div className={`text-4xl mb-6 p-5 rounded-2xl bg-gradient-to-br ${platform.color} text-white shadow-lg shadow-black/20 group-hover:scale-110 transition-transform duration-500`}>
                       {platform.icon}
                     </div>
-                    <h3 className="text-white font-semibold text-lg mb-2">{platform.desc}</h3>
-                    <p className="text-white/60 text-sm">{t("platforms.optimized")}</p>
+                    <h3 className="text-white font-bold text-xl mb-3 tracking-wide">{platform.desc}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{t("platforms.optimized")}</p>
                   </CardContent>
                 </Card>
               </Link>
@@ -279,7 +292,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* EAFC 26 Bundle - SUPER PROMO */}
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
+            <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img
                   src="/eafc26-bundle-promo.png"
@@ -323,7 +336,7 @@ export default function Home() {
             </Card>
 
             {/* EAFC 26 Product - NEW LAUNCH */}
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
+            <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img src="/site-26.png" alt={t("descriptions.eafc26_title")} className="w-full h-48 object-cover" />
                 <div className="absolute top-3 left-3 flex flex-col gap-2">
@@ -360,7 +373,7 @@ export default function Home() {
             </Card>
 
             {/* EAFC 25 Product */}
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
+            <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img
                   src="/eafc25-brasileiros.png"
@@ -396,7 +409,7 @@ export default function Home() {
             </Card>
 
             {/* EAFC 25 Bundle */}
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
+            <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img
                   src="/eafc25-bundle.png"
@@ -434,7 +447,7 @@ export default function Home() {
             </Card>
 
             {/* EAFC 24 */}
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
+            <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img
                   src="/eafc24-brasileiros.png"
@@ -470,7 +483,7 @@ export default function Home() {
             </Card>
 
             {/* PES 2021 Bundle */}
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
+            <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img
                   src="/pes2021-bundle.png"
@@ -506,7 +519,7 @@ export default function Home() {
             </Card>
 
             {/* PES 2021 Patch */}
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
+            <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img
                   src="/pes2021-patch.png"
@@ -542,7 +555,7 @@ export default function Home() {
             </Card>
 
             {/* DFL 25 Mobile */}
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
+            <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img
                   src="/dfl25-celular.png"
@@ -578,7 +591,7 @@ export default function Home() {
             </Card>
 
             {/* Remote Installation Service */}
-            <Card className="bg-black/30 border-white/10 backdrop-blur-sm overflow-hidden hover:bg-white/5 transition-all">
+            <Card className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
               <div className="relative">
                 <img src="/instalacao-remota.png" alt={t("descriptions.remote_install_title")} className="w-full h-48 object-cover" />
                 <Badge className="absolute top-3 left-3 bg-blue-600/90 text-white">{t("featured.service")}</Badge>
