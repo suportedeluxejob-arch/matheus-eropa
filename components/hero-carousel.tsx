@@ -31,8 +31,8 @@ export function HeroCarousel() {
   }, [emblaApi, onSelect])
 
   return (
-    <div className="relative group max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-      <div className="overflow-hidden rounded-[2rem] border border-white/10 glass-card shadow-2xl" ref={emblaRef}>
+    <div className="relative group w-full mb-8">
+      <div className="overflow-hidden rounded-[2.5rem] border border-white/10 glass-card shadow-2xl" ref={emblaRef}>
         <div className="flex">
           {SITE_CONFIG.banners.map((banner) => (
             <div className="relative flex-[0_0_100%] min-w-0" key={banner.id}>

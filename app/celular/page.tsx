@@ -34,25 +34,25 @@ export default function CelularPage() {
 
   return (
     <div className="min-h-screen bg-background selection:bg-primary/30">
-      {/* Hero Carousel Banner Section */}
-      <section className="pt-28 pb-0">
-        <HeroCarousel />
-      </section>
-
       {/* Hero Section */}
       <section className="relative py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10 animate-pulse" />
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-background to-background -z-20" />
 
         <div className="max-w-5xl mx-auto w-full text-center">
-          <Badge className="mb-8 bg-primary/10 text-primary border-primary/20 backdrop-blur-md inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium tracking-wide uppercase shadow-[0_0_15px_-3px_var(--primary)] animate-fade-in-up">
+          <Badge className="mb-12 bg-primary/10 text-primary border-primary/20 backdrop-blur-md inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium tracking-wide uppercase shadow-[0_0_15px_-3px_var(--primary)] animate-fade-in-up">
             <Smartphone className="w-3.5 h-3.5" />
             {t("navbar.mobile")} Gaming
           </Badge>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-[1.1] drop-shadow-2xl animate-fade-in-up delay-100">
+          {/* Carousel moved here */}
+          <div className="mb-16">
+            <HeroCarousel />
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-10 tracking-tighter leading-[1.2] drop-shadow-2xl animate-fade-in-up delay-100">
             Futebol Brasileiro
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-primary">
+            <span className="block my-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-primary">
               no Celular
             </span>
           </h1>
