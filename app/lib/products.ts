@@ -68,7 +68,7 @@ export const PRODUCTS: Product[] = [
         descriptionKey: "descriptions.eafc25_bundle_desc",
         priceKey: "product.price_eafc25_bundle",
         oldPriceKey: "product.price_eafc25_bundle_old",
-        image: "/eafc25-bundle.png",
+        image: "https://iili.io/fS2PP1e.md.png",
         link: "https://go.invictuspay.app.br/rt0t2uecxd",
         cardLink: "https://pay.cakto.com.br/39xfxuj_638367",
         displayCategory: "brazil",
